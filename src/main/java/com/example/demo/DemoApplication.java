@@ -26,7 +26,7 @@ public class DemoApplication {
 		return "Number of users = "+numberUsers;
 	}
 
-	@PostMapping("add-user")
+	@GetMapping("add-user")
 	public String addUser(){
 		User user = new User();
 		user.setFirstName("Render");
