@@ -11,5 +11,8 @@ RUN mvn clean package -DskipTests
 FROM openjdk:11-jdk-slim
 COPY --from=build /target/demo-0.0.1-SNAPSHOT.jar demo.jar
 # ENV PORT=8080
+ENV URL=$URL \
+    USER_NAME=$USER_NAME \
+    DB_PASSWORD=$DB_PASSWORD
 EXPOSE 8080
 ENTRYPOINT ["java","-jar","demo.jar"]
